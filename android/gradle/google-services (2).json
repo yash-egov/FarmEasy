@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1005449366973",
+    "project_id": "farmeasy-fc143",
+    "storage_bucket": "farmeasy-fc143.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1005449366973:android:ec96b0c2011fca57fc56d4",
+        "android_client_info": {
+          "package_name": "com.example.farmeasy_v1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGS2wiDl5ea3MCDZ_YMExiV-gxIzN-pUc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
