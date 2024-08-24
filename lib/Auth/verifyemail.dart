@@ -1,3 +1,5 @@
+import 'package:farmeasy_v1/Auth/login.dart';
+import 'package:farmeasy_v1/Auth/signup.dart';
 import 'package:farmeasy_v1/Auth/wrapper.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -42,16 +44,27 @@ class _VerifyEmailState extends State<VerifyEmail> {
         appBar: AppBar(
           title: Text("Verification"),
         ),
-        body: const Padding(
+        body: Padding(
           padding: EdgeInsets.all(20.0),
-          child: Center(
-            child: Text(
-                "Check Your Email and click on the link to verify your email , once verified click on reload button"),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Center(
+                child: Text(
+                    "Check Your Email and click on the link to verify your email , once verified click on reload button"),
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Login()));
+                  },
+                  child: Text("Entered Wrong Email ?"))
+            ],
           ),
         ),
-        floatingActionButton: FloatingActionButton(
+        floatingActionButton: ElevatedButton(
           onPressed: (() => reload()),
-          child: Icon(Icons.restart_alt_rounded),
+          child: Text("Once Verified Click here"),
         ));
   }
 }

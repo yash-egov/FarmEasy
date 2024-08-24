@@ -1,3 +1,8 @@
+import 'package:farmeasy_v1/Mandi/mandi.dart';
+import 'package:farmeasy_v1/Products/products.dart';
+import 'package:farmeasy_v1/Weather/weather.dart';
+import 'package:farmeasy_v1/news/news.dart';
+import 'package:farmeasy_v1/pages/comingsoon.dart';
 import 'package:farmeasy_v1/pages/settingspage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +21,7 @@ class _HomePageState extends State<HomePage> {
     await FirebaseAuth.instance.signOut();
   }
 
-  int _selectedIndex = 0;
+  int _selectedIndex = 2;
   void _onItemTapped(int index) {
     print(index);
     setState(() {
@@ -56,6 +61,9 @@ class _HomePageState extends State<HomePage> {
               child: Icon(Icons.account_circle))
         ],
       ),
+      body: Center(
+        child: Text("Welcome To FarmEasy"),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.green, // Change this color
@@ -67,14 +75,11 @@ class _HomePageState extends State<HomePage> {
               label: 'Weather',
               icon: IconButton(
                 onPressed: () {
-                  final snackBar = SnackBar(
-                    content: Text("Comming Soon......"),
-                    duration: Duration(milliseconds: 50),
-                  );
-
-                  // Show the SnackBar using ScaffoldMessenger
-                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
                   _onItemTapped(0);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WeatherPage()),
+                  );
                 },
                 icon: Icon(Icons.cloud_circle),
               )),
@@ -82,14 +87,11 @@ class _HomePageState extends State<HomePage> {
             label: 'Mandi',
             icon: IconButton(
               onPressed: () {
-                final snackBar = SnackBar(
-                  content: Text("Comming Soon......"),
-                  duration: Duration(milliseconds: 50),
-                );
-
-                // Show the SnackBar using ScaffoldMessenger
-                ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 _onItemTapped(1);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MandiPage()),
+                );
               },
               icon: Icon(Icons.store_mall_directory),
             ),
@@ -103,31 +105,28 @@ class _HomePageState extends State<HomePage> {
                 icon: Icon(Icons.add)),
           ),
           BottomNavigationBarItem(
-            label: 'Reports',
+            label: 'Products',
             icon: IconButton(
                 onPressed: () {
-                  final snackBar = SnackBar(
-                    content: Text("Comming Soon......"),
-                    duration: Duration(milliseconds: 50),
-                  );
-
-                  // Show the SnackBar using ScaffoldMessenger
-                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
                   _onItemTapped(3);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ProductsPage()),
+                  );
                 },
-                icon: Icon(Icons.file_copy)),
+                icon: Icon(Icons.shop)),
           ),
           BottomNavigationBarItem(
-            label: 'Me',
+            label: 'News',
             icon: IconButton(
                 onPressed: () async {
                   _onItemTapped(4);
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => ProfilePage()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NewsPage()),
+                  );
                 },
-                icon: Icon(Icons.contact_page)),
+                icon: Icon(Icons.newspaper)),
           ),
         ],
       ),

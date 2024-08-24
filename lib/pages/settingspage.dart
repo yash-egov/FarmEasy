@@ -49,9 +49,9 @@ class _SettingsPageState extends State<SettingsPage> {
                   ),
                   Column(
                     children: [
-                      // Text(user.displayName!),
-                      Text(user.email!),
-                      // Text(user.phoneNumber!)
+                      if (user.displayName != null) Text(user.displayName!),
+                      if (user.email != null) Text(user.email!),
+                      if (user.phoneNumber != null) Text(user.phoneNumber!)
                     ],
                   )
                 ],
@@ -127,7 +127,7 @@ class _SettingsPageState extends State<SettingsPage> {
               height: 50,
             ),
             Text(
-              "Made With Crops For Framers",
+              "Made With Maggie For Framers",
               style: TextStyle(
                   fontWeight: FontWeight.w500,
                   fontSize: 20,
