@@ -1,7 +1,6 @@
-import 'package:farmeasy_v1/wrapper.dart';
+import 'package:farmeasy_v1/Auth/wrapper.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});

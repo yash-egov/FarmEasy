@@ -1,7 +1,6 @@
-import 'package:farmeasy_v1/otppage.dart';
+import 'package:farmeasy_v1/Auth/otppage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
 
 class LoginPhoneNumber extends StatefulWidget {
   const LoginPhoneNumber({super.key});

@@ -1,6 +1,6 @@
-import 'package:farmeasy_v1/homepage.dart';
-import 'package:farmeasy_v1/login.dart';
-import 'package:farmeasy_v1/verifyemail.dart';
+import 'package:farmeasy_v1/pages/homepage.dart';
+import 'package:farmeasy_v1/Auth/login.dart';
+import 'package:farmeasy_v1/Auth/verifyemail.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -19,12 +19,12 @@ class _WrapperState extends State<Wrapper> {
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              // return HomePage();
-              if (snapshot.data!.emailVerified) {
-                return HomePage();
-              } else {
-                return VerifyEmail();
-              }
+              return HomePage();
+              // if (snapshot.data!.emailVerified) {
+              //   return HomePage();
+              // } else {
+              //   return VerifyEmail();
+              // }
             } else {
               return Login();
             }

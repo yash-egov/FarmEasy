@@ -1,6 +1,6 @@
-import 'package:farmeasy_v1/forgotpassword.dart';
-import 'package:farmeasy_v1/loginphonenumber.dart';
-import 'package:farmeasy_v1/signup.dart';
+import 'package:farmeasy_v1/Auth/forgotpassword.dart';
+import 'package:farmeasy_v1/Auth/loginphonenumber.dart';
+import 'package:farmeasy_v1/Auth/signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';

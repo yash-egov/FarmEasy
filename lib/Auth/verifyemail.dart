@@ -1,6 +1,5 @@
-import 'package:farmeasy_v1/wrapper.dart';
+import 'package:farmeasy_v1/Auth/wrapper.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class VerifyEmail extends StatefulWidget {

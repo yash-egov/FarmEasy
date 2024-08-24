@@ -1,6 +1,4 @@
-import 'package:farmeasy_v1/homepage.dart';
-import 'package:farmeasy_v1/login.dart';
-import 'package:farmeasy_v1/wrapper.dart';
+import 'package:farmeasy_v1/Auth/wrapper.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -18,12 +16,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Wrapper(),
+      home: const Wrapper(),
     );
   }
 }
